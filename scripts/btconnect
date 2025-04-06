@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# 📥 Get device name from arguments
+DEVICE_NAME="$*"
+
+if [ -z "$DEVICE_NAME" ]; then
+    echo "Usage: btconnect <device name>"
+    exit 1
+fi
+
+# 🔍 Look for MAC address of paired device
+DEVICE_MAC=$(bluetoothctl devices | grep "$DEVICE_NAME" | awk '{print $2}')
+
+# If not found, scan to find it
+if [ -z "$DEVICE_MAC" ]; then
+    echo "[🔄] '$DEVICE_NAME' not paired. Scanning for nearby devices..."
+    bluetoothctl --timeout 10 scan on > /dev/null &
+    sleep 5
+
+    DEVICE_MAC=$(bluetoothctl devices | grep "$DEVICE_NAME" | awk '{print $2}')
+
+    if [ -z "$DEVICE_MAC" ]; then
+        echo "[❌] Could not find '$DEVICE_NAME'. Make sure it's in pairing mode."
+        exit 1
+    fi
+
+    echo "[🔗] Pairing and trusting $DEVICE_NAME ($DEVICE_MAC)..."
+    echo -e "pair $DEVICE_MAC\ntrust $DEVICE_MAC" | bluetoothctl
+    sleep 2
+fi
+
+# ✅ Connect
+echo "[⚡] Connecting to $DEVICE_NAME ($DEVICE_MAC)..."
+echo -e "connect $DEVICE_MAC" | bluetoothctl
+
