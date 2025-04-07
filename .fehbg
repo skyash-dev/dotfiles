@@ -1,0 +1,4 @@
+#!/bin/sh
+WALLPAPER=$(find ~/.local/bin/backgrounds -type f | shuf -n 1)
+feh --bg-scale "$WALLPAPER"
+
