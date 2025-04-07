@@ -141,7 +141,7 @@ font-2 = "feather:size=12;3"
 
 modules-left = i3 cpu memory 
 modules-center = date
-modules-right = battery volume network brightness sysmenu pulseaudio
+modules-right = battery volume network brightness sysmenu
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -292,3 +292,17 @@ compositing-border = over
 pseudo-transparency = false
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/battery]
+type = internal/battery
+
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = 🔌 <percentage>%
+format-discharging = 🔋 <percentage>%
+format-full = ✅ <percentage>%
+
+poll-interval = 30
+
