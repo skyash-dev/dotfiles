@@ -233,8 +233,6 @@ exec_always --no-startup-id /home/skyash/.config/polybar/launch.sh  --forest
 # Connect To Buds on Startup
 exec --no-startup-id btconnect "realme Buds T300"
 
-exec --no-startup-id i3-msg "workspace $ws1"
-
 # Assign apps to workspaces
 assign [class="Brave-browser"] $ws1
 assign [class="Alacritty"] $ws3
@@ -255,3 +253,5 @@ exec --no-startup-id i3-msg "workspace number $ws5; exec telegram-desktop"
 exec --no-startup-id i3-msg "workspace number $ws6; exec obsidian"
 exec --no-startup-id i3-msg "workspace number $ws7; exec ticktick"
 exec --no-startup-id i3-msg "workspace number $ws8; exec youtube-music"
+
+exec --no-startup-id i3-msg "workspace $ws1"
