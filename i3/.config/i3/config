@@ -230,15 +230,28 @@ exec_always --no-startup-id feh --bg-scale --randomize ~/.local/bin/backgrounds/
 # polybar yay
 exec_always --no-startup-id /home/skyash/.config/polybar/launch.sh  --forest
 
-# Auto-start apps into specific workspaces
-exec --no-startup-id i3-msg "workspace $ws1; exec brave"
-exec --no-startup-id i3-msg "workspace $ws3; exec alacritty"
-exec --no-startup-id i3-msg "workspace $ws5; exec discord"
-exec --no-startup-id i3-msg 'workspace $ws5; exec brave "https://x.com" "https://reddit.com"'
-exec --no-startup-id i3-msg "workspace $ws5; exec telegram-desktop"
-exec --no-startup-id i3-msg "workspace $ws6; exec obsidian"
-exec --no-startup-id i3-msg 'workspace $ws6; exec brave "https://www.notion.so/"'
-exec --no-startup-id i3-msg "workspace $ws7; exec youtube-music"
-
 # Connect To Buds on Startup
 exec --no-startup-id btconnect "realme Buds T300"
+
+exec --no-startup-id i3-msg "workspace $ws1"
+
+# Assign apps to workspaces
+assign [class="Brave-browser"] $ws1
+assign [class="Alacritty"] $ws3
+assign [class="Code"] $ws4
+assign [class="discord"] $ws5
+assign [class="TelegramDesktop"] $ws5
+assign [class="obsidian"] $ws6
+assign [class="ticktick"] $ws7
+assign [class="com.github.th_ch.youtube_music"] $ws8
+
+# Auto-start apps into specific workspaces
+exec --no-startup-id i3-msg "workspace number $ws1; exec brave"
+exec --no-startup-id i3-msg "workspace number $ws3; exec alacritty"
+exec --no-startup-id i3-msg "workspace number $ws4; exec code"
+exec --no-startup-id i3-msg "workspace number $ws5; exec discord"
+exec --no-startup-id i3-msg 'workspace number $ws5; exec brave "https://x.com" "https://reddit.com"'
+exec --no-startup-id i3-msg "workspace number $ws5; exec telegram-desktop"
+exec --no-startup-id i3-msg "workspace number $ws6; exec obsidian"
+exec --no-startup-id i3-msg "workspace number $ws7; exec ticktick"
+exec --no-startup-id i3-msg "workspace number $ws8; exec youtube-music"
