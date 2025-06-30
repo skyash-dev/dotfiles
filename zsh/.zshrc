@@ -3,3 +3,5 @@
 export PATH="$HOME/.local/bin/scripts/:$PATH"
 
 export VIM_PYTHON3_HOST_PROG="$HOME/.config/nvim/rplugin/python3/venv/bin/python"
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
