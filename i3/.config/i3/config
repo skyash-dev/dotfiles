@@ -234,7 +234,7 @@ exec_always --no-startup-id /home/skyash/.config/polybar/launch.sh  --forest
 exec --no-startup-id btconnect "realme Buds T300"
 
 # Assign apps to workspaces
-assign [class="Brave-browser"] $ws1
+assign [class="firefox"] $ws1
 assign [class="Alacritty"] $ws3
 assign [class="Code"] $ws4
 assign [class="discord"] $ws5
@@ -243,7 +243,7 @@ assign [class="obsidian"] $ws6
 assign [class="ticktick"] $ws7
 
 # Auto-start apps into specific workspaces
-exec --no-startup-id i3-msg "workspace number $ws1; exec brave"
+exec --no-startup-id i3-msg "workspace number $ws1; exec firefox"
 exec --no-startup-id i3-msg "workspace number $ws3; exec alacritty"
 exec --no-startup-id i3-msg "workspace number $ws4; exec code"
 exec --no-startup-id i3-msg "workspace number $ws5; exec discord"
