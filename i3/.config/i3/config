@@ -107,7 +107,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+p focus parent
 
 # open brave
-bindsym $mod+b exec --no-startup-id brave
+bindsym $mod+b exec --no-startup-id firefox
 
 # open nemo
 bindsym $mod+d exec --no-startup-id nemo
@@ -247,7 +247,6 @@ exec --no-startup-id i3-msg "workspace number $ws1; exec firefox"
 exec --no-startup-id i3-msg "workspace number $ws3; exec alacritty"
 exec --no-startup-id i3-msg "workspace number $ws4; exec code"
 exec --no-startup-id i3-msg "workspace number $ws5; exec discord"
-exec --no-startup-id i3-msg 'workspace number $ws5; exec brave "https://x.com" "https://reddit.com"'
 exec --no-startup-id i3-msg "workspace number $ws5; exec telegram-desktop"
 exec --no-startup-id i3-msg "workspace number $ws6; exec obsidian"
 exec --no-startup-id i3-msg "workspace number $ws7; exec ticktick"
