@@ -31,25 +31,25 @@ button {
 button:hover {
     background: inherit;
     color: @mauve;
-    border-top: 2px solid @mauve;
+/*  border-top: 2px solid @mauve; */
 }
 
 #workspaces button {
     padding: 8px;
-color:@sky;
+    color:@sky;
 }
 
 
 #workspaces button.focused {
     background-color: rgba(0, 0, 0, 0.3);
     color: @rosewater;
-    border-top: 2px solid @sky;
+/*    border-top: 2px solid @sky; */
 }
 
 #workspaces button.active {
     background-color: rgba(0, 0, 0, 0.3);
-/*    color: @mauve;*/
-    border-top: 2px solid @sky;
+/*    color: @mauve;
+    border-top: 2px solid @sky; */
 }
 
 #workspaces button.urgent {
